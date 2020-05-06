@@ -13,7 +13,7 @@ margin-right:auto;
 div.category {
     background-color: #ECECEC;
     margin-top: 2%;
-    border-radius: 5%;
+    border-radius: 2%;
 }
 
 ul#header-buttons button{
@@ -28,10 +28,23 @@ ul#header-buttons button{
     border-radius: 50%;
 }
 
-.toggleButtons{
+.footers{
     margin-top: 2%;
     text-align: center;
 }
 
+.toggleButtons{
+   display: inline;
+    
+}
+
+.totalScore{
+    float: right;
+    display: inline;
+}
+
+.score , .maxScore{
+    display: inline;
+}
 
 
