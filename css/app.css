@@ -1,0 +1,37 @@
+body{
+    background-color: gray;
+
+}
+
+.mainContainer{
+width: 80%;
+margin-left: auto;
+margin-right:auto;
+
+}
+
+div.category {
+    background-color: #ECECEC;
+    margin-top: 2%;
+    border-radius: 5%;
+}
+
+ul#header-buttons button{
+    float: right;
+}
+
+.rating{
+    float: right;
+}
+
+.nextButton, .prevButton{
+    border-radius: 50%;
+}
+
+.toggleButtons{
+    margin-top: 2%;
+    text-align: center;
+}
+
+
+
