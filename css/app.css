@@ -11,7 +11,6 @@ margin-right:auto;
 }
 
 div.category {
-    background-color: #ECECEC;
     margin-top: 2%;
     border-radius: 2%;
 }
@@ -38,12 +37,16 @@ ul#header-buttons button{
     
 }
 
+#prev, #next{
+    
+}
+
 .totalScore{
     float: right;
     display: inline;
 }
 
-.score , .maxScore{
+#score , #maxScore{
     display: inline;
 }
 
