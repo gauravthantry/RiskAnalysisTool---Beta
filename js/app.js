@@ -194,10 +194,13 @@ $(document).ready(function () {
         if(risk === 0)
         {
            $("#successPercentage").css("color","#008000");
+           $(".lead").html("This project has passed all the Risk assessment criterias and can be deployed in production");
         }
         else if(risk === 1)
         {
          $("#successPercentage").css("color","#90EE90");
+
+         $(".lead").html("This project has passed most of the Risk assessment criterias and can be deployed in production if the below issues do not affect the application");
         }
         else if(risk === 2)
         {
@@ -213,12 +216,7 @@ $(document).ready(function () {
         }
       
       $(".display-4").html("Success rate : ");
-      $("#successPercentage").html(scorePercentage+"%");
-
-
-   
-
-      
+      $("#successPercentage").html(scorePercentage+"%"); 
    });
 
    $("#reEvaluate").click(()=>{
