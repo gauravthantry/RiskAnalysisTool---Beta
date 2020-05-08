@@ -65,7 +65,7 @@ $(document).ready(function () {
             $("#gGroup").fadeIn(300);
             $(".nextButton").hide();
             $(".evaluate").show();
-      });
+         });
          currentCategoryIndex++;
       }
    });
@@ -140,12 +140,12 @@ $(document).ready(function () {
       }
    });
 
-   $("#evaluate").click(()=>{
+   $("#evaluate").click(() => {
       $(".totalScore").hide();
-      
+
       var totalScore = parseInt($("#score").text());
       var maxScore = parseInt($("#maxScore").text());
-      var scorePercentage = ((totalScore/maxScore)*100).toFixed(2);
+      var scorePercentage = ((totalScore / maxScore) * 100).toFixed(2);
       var mainRiskReasons = [];
       $(".mainContainer").fadeOut(300, function () {
          $("#gGroup").hide();
@@ -157,69 +157,62 @@ $(document).ready(function () {
          $("#prev").hide();
       });
 
-      if(scorePercentage < 90 && scorePercentage >80)
-      {
+      if (scorePercentage < 90 && scorePercentage > 80) {
          risk = 1;
       }
-      else if(scorePercentage <80 && scorePercentage > 70)
-      {
+      else if (scorePercentage < 80 && scorePercentage > 70) {
          risk = 2;
       }
-      else if(scorePercentage <70 && scorePercentage > 60)
-      {
+      else if (scorePercentage < 70 && scorePercentage > 60) {
          risk = 3;
       }
-      else if(scorePercentage < 60){
+      else if (scorePercentage < 60) {
          risk = 4;
       }
-      $(".important").each((i,obj)=>{
-         if($(obj).children('select').val() < 5){
-            if(risk <2){
-               risk =2;
+      $(".important").each((i, obj) => {
+         if ($(obj).children('select').val() < 5) {
+            if (risk < 2) {
+               risk = 2;
             }
-            console.log("Risk "+i+" : "+$($(obj).parent().contents()[1]).text());
+            console.log("Risk " + i + " : " + $($(obj).parent().contents()[1]).text());
          }
-         else if($(obj).children('select').val() < 4){
-            if(risk<3){
+         else if ($(obj).children('select').val() < 4) {
+            if (risk < 3) {
                risk = 3;
             }
          }
-         else if($(obj).children('select').val() < 3){
-            if(risk<4){
+         else if ($(obj).children('select').val() < 3) {
+            if (risk < 4) {
                risk = 4;
             }
          }
-        });
+      });
 
-        if(risk === 0)
-        {
-           $("#successPercentage").css("color","#008000");
-           $(".lead").html("This project has passed all the Risk assessment criterias and can be deployed in production");
-        }
-        else if(risk === 1)
-        {
-         $("#successPercentage").css("color","#90EE90");
+      if (risk === 0) {
+         $("#successPercentage").css("color", "#008000");
+         $(".lead").html("This project has passed all the Risk assessment criterias and can be deployed in production");
+      }
+      else if (risk === 1) {
+         $("#successPercentage").css("color", "#90EE90");
 
-         $(".lead").html("This project has passed most of the Risk assessment criterias and can be deployed in production if the below issues do not affect the application");
-        }
-        else if(risk === 2)
-        {
-         $("#successPercentage").css("color","#ffa500");
-        }
-        else if(risk === 3)
-        {
-           $("#successPercentage").css("color","#ff0000");
-        }
-        else if(risk === 4)
-        {
-         $("#successPercentage").css("color","#991A00");
-        }
-      
+         $(".lead").html("This project has passed most of the Risk assessment criterias and can be deployed in production if it is agreed that the below issues do not affect the application");
+         lowRiskIssues();
+      }
+      else if (risk === 2) {
+         $("#successPercentage").css("color", "#ffa500");
+      }
+      else if (risk === 3) {
+         $("#successPercentage").css("color", "#ff0000");
+      }
+      else if (risk === 4) {
+         $("#successPercentage").css("color", "#991A00");
+      }
+
       $(".display-4").html("Success rate : ");
-      $("#successPercentage").html(scorePercentage+"%"); 
+      $("#successPercentage").html(scorePercentage + "%");
    });
 
-   $("#reEvaluate").click(()=>{
+   $("#reEvaluate").click(() => {
       risk = 0;
       $(".totalScore").show();
       $(".mainContainer").fadeOut(300, function () {
@@ -234,3 +227,16 @@ $(document).ready(function () {
       currentCategoryIndex = 0;
    });
 });
+
+
+function lowRiskIssues(){
+   console.log("lowrisk"); 
+   $(".criteria").each((i, obj)=>{
+      console.log("span");
+      if($(obj).children("span").children("select").val()<5)
+      {
+      console.log($($(obj).contents()[1]).text());
+      }
+   })
+   
+}
