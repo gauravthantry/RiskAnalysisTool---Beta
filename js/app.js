@@ -1,6 +1,7 @@
 $(document).ready(function () {
    let currentCategoryIndex = 0;
    let totalScore = 0;
+   var risk = 0;
    $("#bGroup").hide();
    $("#cGroup").hide();
    $("#dGroup").hide();
@@ -140,6 +141,12 @@ $(document).ready(function () {
    });
 
    $("#evaluate").click(()=>{
+      $(".totalScore").hide();
+      
+      var totalScore = parseInt($("#score").text());
+      var maxScore = parseInt($("#maxScore").text());
+      var scorePercentage = ((totalScore/maxScore)*100).toFixed(2);
+      var mainRiskReasons = [];
       $(".mainContainer").fadeOut(300, function () {
          $("#gGroup").hide();
          $(".mainContainer").fadeIn(300);
@@ -149,9 +156,74 @@ $(document).ready(function () {
          $("#next").hide();
          $("#prev").hide();
       });
+
+      if(scorePercentage < 90 && scorePercentage >80)
+      {
+         risk = 1;
+      }
+      else if(scorePercentage <80 && scorePercentage > 70)
+      {
+         risk = 2;
+      }
+      else if(scorePercentage <70 && scorePercentage > 60)
+      {
+         risk = 3;
+      }
+      else if(scorePercentage < 60){
+         risk = 4;
+      }
+      $(".important").each((i,obj)=>{
+         if($(obj).children('select').val() < 5){
+            if(risk <2){
+               risk =2;
+            }
+            console.log("Risk "+i+" : "+$($(obj).parent().contents()[1]).text());
+         }
+         else if($(obj).children('select').val() < 4){
+            if(risk<3){
+               risk = 3;
+            }
+         }
+         else if($(obj).children('select').val() < 3){
+            if(risk<4){
+               risk = 4;
+            }
+         }
+        });
+
+        if(risk === 0)
+        {
+           $("#successPercentage").css("color","#008000");
+        }
+        else if(risk === 1)
+        {
+         $("#successPercentage").css("color","#90EE90");
+        }
+        else if(risk === 2)
+        {
+         $("#successPercentage").css("color","#ffa500");
+        }
+        else if(risk === 3)
+        {
+           $("#successPercentage").css("color","#ff0000");
+        }
+        else if(risk === 4)
+        {
+         $("#successPercentage").css("color","#991A00");
+        }
+      
+      $(".display-4").html("Success rate : ");
+      $("#successPercentage").html(scorePercentage+"%");
+
+
+   
+
+      
    });
 
    $("#reEvaluate").click(()=>{
+      risk = 0;
+      $(".totalScore").show();
       $(".mainContainer").fadeOut(300, function () {
          $(".mainContainer").fadeIn(300);
          $("#aGroup").fadeIn(300);

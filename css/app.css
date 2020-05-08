@@ -56,7 +56,11 @@ ul#header-buttons button{
     display: inline;
 }
 
-#score , #maxScore{
+#score , #maxScore, #scoreDividerDisplay{
+    display: inline;
+}
+
+.display-4{
     display: inline;
 }
 
