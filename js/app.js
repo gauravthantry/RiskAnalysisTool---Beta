@@ -7,6 +7,9 @@ $(document).ready(function () {
    $("#eGroup").hide();
    $("#fGroup").hide();
    $("#gGroup").hide();
+   $("#evaluateScore").hide();
+   $("#evaluate").hide();
+   $("#reEvaluate").hide();
    $("#score").html("0");
    $("#next").click(function () {
       if (currentCategoryIndex == 0) {
@@ -59,8 +62,9 @@ $(document).ready(function () {
             $("#fGroup").hide();
             $(".mainContainer").fadeIn(300);
             $("#gGroup").fadeIn(300);
-
-         });
+            $(".nextButton").hide();
+            $(".evaluate").show();
+      });
          currentCategoryIndex++;
       }
    });
@@ -128,9 +132,35 @@ $(document).ready(function () {
             $("#gGroup").hide();
             $(".mainContainer").fadeIn(300);
             $("#fGroup").fadeIn(300);
-
+            $(".evaluate").hide();
+            $(".nextButton").show();
          });
          currentCategoryIndex--;
       }
+   });
+
+   $("#evaluate").click(()=>{
+      $(".mainContainer").fadeOut(300, function () {
+         $("#gGroup").hide();
+         $(".mainContainer").fadeIn(300);
+         $("#evaluateScore").fadeIn(300);
+         $("#reEvaluate").show();
+         $("#evaluate").hide();
+         $("#next").hide();
+         $("#prev").hide();
+      });
+   });
+
+   $("#reEvaluate").click(()=>{
+      $(".mainContainer").fadeOut(300, function () {
+         $(".mainContainer").fadeIn(300);
+         $("#aGroup").fadeIn(300);
+         $("#evaluateScore").hide();
+         $("#reEvaluate").hide();
+         $("#evaluate").hide();
+         $("#next").show();
+         $("#prev").show();
+      });
+      currentCategoryIndex = 0;
    });
 });

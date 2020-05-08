@@ -6,6 +6,7 @@
     <script src="https://code.jquery.com/jquery-3.5.1.js"
         integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
     <script src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.5/jquery-ui.min.js'></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="js/app.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -29,7 +30,7 @@
                     <h4 class="categoryName">A - Project Management and Governance</h4>
                 </a>
                 <div class="list-group">
-                    <a class="list-group-item list-group-item-action list-group-item-light assessments">Has
+                    <a class="list-group-item list-group-item-action list-group-item-light assessments">Were
                         consideration been put in the current project scope and been well defined? <span
                             class="rating"><select class="form-control ratingSelect" id="c1s1">
                                 <option>0</option>
@@ -39,9 +40,9 @@
                                 <option>4</option>
                                 <option>5</option>
                             </select></span></a>
-                    <a class="list-group-item list-group-item-action list-group-item-light assessments">Have
-                        sufficient processes been put in place to minimize the lack of accountability when things go
-                        wrong? <span class="rating"><select class="form-control ratingSelect" id="c1s2">
+                    <a class="list-group-item list-group-item-warning"><i class="fa fa-star"></i> Were sufficient
+                        processes been put in place to minimize the lack of accountability when things go wrong? <span
+                            class="rating"><select class="form-control ratingSelect" id="c1s2">
                                 <option>0</option>
                                 <option>1</option>
                                 <option>2</option>
@@ -49,8 +50,7 @@
                                 <option>4</option>
                                 <option>5</option>
                             </select></span></a>
-                    <a class="list-group-item list-group-item-action list-group-item-light assessments">Does the
-                        project have a selection of stakeholders which accurately represent the project? <span
+                    <a class="list-group-item list-group-item-action list-group-item-light assessments">Do the stakeholders correctly represent their roles?  <span
                             class="rating"><select class="form-control ratingSelect" id="c1s3">
                                 <option>0</option>
                                 <option>1</option>
@@ -59,8 +59,7 @@
                                 <option>4</option>
                                 <option>5</option>
                             </select></span></a>
-                    <a class="list-group-item list-group-item-action list-group-item-light assessments">Are there
-                        any gaps of key roles at any level of the project?<span class="rating"><select
+                    <a class="list-group-item list-group-item-action list-group-item-light assessments">Did the project have all the key roles represented?<span class="rating"><select
                                 class="form-control ratingSelect" id="c1s4">
                                 <option>0</option>
                                 <option>1</option>
@@ -69,8 +68,8 @@
                                 <option>4</option>
                                 <option>5</option>
                             </select></span></a>
-                    <a class="list-group-item list-group-item-action list-group-item-light assessments">Have
-                        schedules been completed?<span class="rating"><select class="form-control ratingSelect"
+                            <a class="list-group-item list-group-item-warning"><i class="fa fa-star"></i> Were
+                        schedules been completed and followed?<span class="rating"><select class="form-control ratingSelect"
                                 id="c1s5">
                                 <option>0</option>
                                 <option>1</option>
@@ -79,8 +78,8 @@
                                 <option>4</option>
                                 <option>5</option>
                             </select></span></a>
-                    <a class="list-group-item list-group-item-action list-group-item-light assessments">Are the
-                        milestones and deadlines in place realistic and achievable?<span class="rating"><select
+                    <a class="list-group-item list-group-item-action list-group-item-light assessments">Were the
+                        milestones and deadlines realistic and achievable?<span class="rating"><select
                                 class="form-control ratingSelect" id="c1s6">
                                 <option>0</option>
                                 <option>1</option>
@@ -89,8 +88,8 @@
                                 <option>4</option>
                                 <option>5</option>
                             </select></span></a>
-                    <a class="list-group-item list-group-item-action list-group-item-light assessments">Has there
-                        been minimal turnover in leadership and staff positions?<span class="rating"><select
+                    <a class="list-group-item list-group-item-action list-group-item-light assessments">were there
+                         low turnover in leadership and staff positions?<span class="rating"><select
                                 class="form-control ratingSelect" id="c1s7">
                                 <option>0</option>
                                 <option>1</option>
@@ -108,8 +107,8 @@
                     <h4 class="categoryName">B - Project Development and Training</h4>
                 </a>
                 <div class="list-group">
-                    <a class="list-group-item list-group-item-action list-group-item-light assessments">Are there
-                        actions in place to ensure no development is continued during a code freeze?<span
+                    <a class="list-group-item list-group-item-action list-group-item-light assessments">Were there
+                        any code changes or development made during code freeze?<span
                             class="rating"><select class="form-control ratingSelect" id="c2s1">
                                 <option>0</option>
                                 <option>1</option>
@@ -118,8 +117,7 @@
                                 <option>4</option>
                                 <option>5</option>
                             </select></span></a>
-                    <a class="list-group-item list-group-item-action list-group-item-light assessments">Are there
-                        processes in place to ensure decisions are not based off optimism? <span class="rating"><select
+                    <a class="list-group-item list-group-item-action list-group-item-light assessments">Did the stakeholders refrain from making decisions based on optimism? <span class="rating"><select
                                 class="form-control" id="c2s2">
                                 <option>0</option>
                                 <option>1</option>
@@ -128,8 +126,7 @@
                                 <option>4</option>
                                 <option>5</option>
                             </select></span></a>
-                    <a class="list-group-item list-group-item-action list-group-item-light assessments">Is there
-                        processes/plans to give end users adequate training prior to the go-live? <span
+                    <a class="list-group-item list-group-item-action list-group-item-light assessments">Were end users given adequate training?<span
                             class="rating"><select class="form-control ratingSelect" id="c2s3">
                                 <option>0</option>
                                 <option>1</option>
@@ -147,8 +144,8 @@
                     <h4 class="categoryName">C - Implementation / Go-Live</h4>
                 </a>
                 <div class="list-group">
-                    <a class="list-group-item list-group-item-action list-group-item-light assessments">Have you ensured
-                        all requirements have been completed prior to the rollout? <span class="rating"><select
+                    <a class="list-group-item list-group-item-action list-group-item-light assessments">Have all the
+                        all requirements been completed? <span class="rating"><select
                                 class="form-control ratingSelect" id="c3s1">
                                 <option>0</option>
                                 <option>1</option>
@@ -157,8 +154,8 @@
                                 <option>4</option>
                                 <option>5</option>
                             </select></span></a>
-                    <a class="list-group-item list-group-item-action list-group-item-light assessments">Has the
-                        implementation strategy been reviewed and chosen to be most appropriate? <span
+                    <a class="list-group-item list-group-item-action list-group-item-light assessments">Was the
+                        implementation strategy reviewed and chosen to be the most appropriate? <span
                             class="rating"><select class="form-control ratingSelect" id="c3s2">
                                 <option>0</option>
                                 <option>1</option>
@@ -167,8 +164,8 @@
                                 <option>4</option>
                                 <option>5</option>
                             </select></span></a>
-                    <a class="list-group-item list-group-item-action list-group-item-light assessments">Has there been
-                        consideration into support for end users after Rollout? <span class="rating"><select
+                    <a class="list-group-item list-group-item-action list-group-item-light assessments">Are there adequate
+                        support for end users after Rollout? <span class="rating"><select
                                 class="form-control ratingSelect" id="c3s3">
                                 <option>0</option>
                                 <option>1</option>
@@ -177,8 +174,7 @@
                                 <option>4</option>
                                 <option>5</option>
                             </select></span></a>
-                    <a class="list-group-item list-group-item-action list-group-item-light assessments">Are the phases
-                        of implementation identified in planning being followed in rollout?<span class="rating"><select
+                    <a class="list-group-item list-group-item-action list-group-item-light assessments">Will a phased rollout be followed?<span class="rating"><select
                                 class="form-control ratingSelect" id="c3s4">
                                 <option>0</option>
                                 <option>1</option>
@@ -187,8 +183,7 @@
                                 <option>4</option>
                                 <option>5</option>
                             </select></span></a>
-                    <a class="list-group-item list-group-item-action list-group-item-light assessments">Has a plan been
-                        developed to ensure no risks are carried into the Go-Live?<span class="rating"><select
+                    <a class="list-group-item list-group-item-action list-group-item-light assessments">Has it been ensured that no risks are carried into the Go-Live?<span class="rating"><select
                                 class="form-control ratingSelect" id="c3s5">
                                 <option>0</option>
                                 <option>1</option>
@@ -206,7 +201,8 @@
                     <h4 class="categoryName">D - Planning & Requirements</h4>
                 </a>
                 <div class="list-group">
-                    <a class="list-group-item list-group-item-action list-group-item-light assessments">Has appropriate research been done for selection of vendor? <span class="rating"><select
+                    <a class="list-group-item list-group-item-action list-group-item-light assessments">Was appropriate
+                        research done for the selection of vendor? <span class="rating"><select
                                 class="form-control ratingSelect" id="c3s1">
                                 <option>0</option>
                                 <option>1</option>
@@ -215,7 +211,8 @@
                                 <option>4</option>
                                 <option>5</option>
                             </select></span></a>
-                    <a class="list-group-item list-group-item-action list-group-item-light assessments">Has enough planning been done for this size of project? Including goals, phases, and deadlines? <span
+                    <a class="list-group-item list-group-item-action list-group-item-light assessments">Was there enough
+                        planning done for the project? Including goals, phases, and deadlines? <span
                             class="rating"><select class="form-control ratingSelect" id="c3s2">
                                 <option>0</option>
                                 <option>1</option>
@@ -224,7 +221,8 @@
                                 <option>4</option>
                                 <option>5</option>
                             </select></span></a>
-                    <a class="list-group-item list-group-item-action list-group-item-light assessments">Have all user requirements been laid out and assessed? <span class="rating"><select
+                    <a class="list-group-item list-group-item-action list-group-item-light assessments">Were all user
+                        requirements been laid out and assessed? <span class="rating"><select
                                 class="form-control ratingSelect" id="c3s3">
                                 <option>0</option>
                                 <option>1</option>
@@ -233,8 +231,9 @@
                                 <option>4</option>
                                 <option>5</option>
                             </select></span></a>
-                    <a class="list-group-item list-group-item-action list-group-item-light assessments">Are the current negotiations between client and vendor clear and suitable for long term agreement?<span class="rating"><select
-                                class="form-control ratingSelect" id="c3s4">
+                    <a class="list-group-item list-group-item-action list-group-item-light assessments">Were the
+                        negotiations between client and vendor clear and suitable for long term agreement?<span
+                            class="rating"><select class="form-control ratingSelect" id="c3s4">
                                 <option>0</option>
                                 <option>1</option>
                                 <option>2</option>
@@ -251,7 +250,8 @@
                     <h4 class="categoryName">E - Project Finance</h4>
                 </a>
                 <div class="list-group">
-                    <a class="list-group-item list-group-item-action list-group-item-light assessments">Have measures been put in place to ensure the budget remains on track? <span class="rating"><select
+                    <a class="list-group-item list-group-item-action list-group-item-light assessments">Was it
+                         ensured that the budget was on track? <span class="rating"><select
                                 class="form-control ratingSelect" id="c3s1">
                                 <option>0</option>
                                 <option>1</option>
@@ -260,7 +260,8 @@
                                 <option>4</option>
                                 <option>5</option>
                             </select></span></a>
-                    <a class="list-group-item list-group-item-action list-group-item-light assessments">Has the budget been properly reviewed by personnel with experience in similar projects? <span
+                    <a class="list-group-item list-group-item-action list-group-item-light assessments">Was the budget
+                         properly reviewed by someone with experience in similar projects? <span
                             class="rating"><select class="form-control ratingSelect" id="c3s2">
                                 <option>0</option>
                                 <option>1</option>
@@ -269,8 +270,9 @@
                                 <option>4</option>
                                 <option>5</option>
                             </select></span></a>
-                    <a class="list-group-item list-group-item-action list-group-item-light assessments"> Is there processes in place to mitigate potential delays and the associated costs? <span class="rating"><select
-                                class="form-control ratingSelect" id="c3s3">
+                    <a class="list-group-item list-group-item-action list-group-item-light assessments"> Were there
+                        processes in place to mitigate potential delays and the associated costs? <span
+                            class="rating"><select class="form-control ratingSelect" id="c3s3">
                                 <option>0</option>
                                 <option>1</option>
                                 <option>2</option>
@@ -287,8 +289,9 @@
                     <h4 class="categoryName">F - Communication & Collaboration</h4>
                 </a>
                 <div class="list-group">
-                    <a class="list-group-item list-group-item-action list-group-item-light assessments">Do team members know what their role and responsibilities consist of at all project levels?<span class="rating"><select
-                                class="form-control ratingSelect" id="c3s1">
+                    <a class="list-group-item list-group-item-action list-group-item-light assessments">Did the team members
+                        know what their role and responsibilities were at all project levels?<span
+                            class="rating"><select class="form-control ratingSelect" id="c3s1">
                                 <option>0</option>
                                 <option>1</option>
                                 <option>2</option>
@@ -296,8 +299,8 @@
                                 <option>4</option>
                                 <option>5</option>
                             </select></span></a>
-                    <a class="list-group-item list-group-item-action list-group-item-light assessments">Is there processes in place to ensure there has been a continued presence by the top-level in the project? <span
-                            class="rating"><select class="form-control ratingSelect" id="c3s2">
+                    <a class="list-group-item list-group-item-action list-group-item-light assessments">Was there continued presence by the top-level roles in the
+                        project? <span class="rating"><select class="form-control ratingSelect" id="c3s2">
                                 <option>0</option>
                                 <option>1</option>
                                 <option>2</option>
@@ -305,7 +308,8 @@
                                 <option>4</option>
                                 <option>5</option>
                             </select></span></a>
-                    <a class="list-group-item list-group-item-action list-group-item-light assessments">Is there transparency between client, vendor, team members, and end users? <span class="rating"><select
+                    <a class="list-group-item list-group-item-action list-group-item-light assessments">was there
+                        transparency between the different stakeholders of the project? <span class="rating"><select
                                 class="form-control ratingSelect" id="c3s3">
                                 <option>0</option>
                                 <option>1</option>
@@ -314,8 +318,9 @@
                                 <option>4</option>
                                 <option>5</option>
                             </select></span></a>
-                            <a class="list-group-item list-group-item-action list-group-item-light assessments">Are end users being involved during the project phases as a form of feedback and training? <span class="rating"><select
-                                class="form-control ratingSelect" id="c3s3">
+                    <a class="list-group-item list-group-item-action list-group-item-light assessments">Were the end users
+                        being involved during the project phases as a form of feedback and training? <span
+                            class="rating"><select class="form-control ratingSelect" id="c3s3">
                                 <option>0</option>
                                 <option>1</option>
                                 <option>2</option>
@@ -332,8 +337,9 @@
                     <h4 class="categoryName">G – Risk and Quality Assurance</h4>
                 </a>
                 <div class="list-group">
-                    <a class="list-group-item list-group-item-action list-group-item-light assessments">Has the system been tested and troubleshooted to the full extent before implementation? <span class="rating"><select
-                                class="form-control ratingSelect" id="c3s1">
+                    <a class="list-group-item list-group-item-action list-group-item-light assessments">Were the system
+                        been tested and troubleshooted to the full extent before implementation? <span
+                            class="rating"><select class="form-control ratingSelect" id="c3s1">
                                 <option>0</option>
                                 <option>1</option>
                                 <option>2</option>
@@ -341,8 +347,8 @@
                                 <option>4</option>
                                 <option>5</option>
                             </select></span></a>
-                    <a class="list-group-item list-group-item-action list-group-item-light assessments">Is there currently measures in place to deal with failed test cases? <span
-                            class="rating"><select class="form-control ratingSelect" id="c3s2">
+                    <a class="list-group-item list-group-item-action list-group-item-light assessments">Are all the Failed Test cases dealt with and corrected? <span class="rating"><select
+                                class="form-control ratingSelect" id="c3s2">
                                 <option>0</option>
                                 <option>1</option>
                                 <option>2</option>
@@ -350,7 +356,8 @@
                                 <option>4</option>
                                 <option>5</option>
                             </select></span></a>
-                    <a class="list-group-item list-group-item-action list-group-item-light assessments">Have all risks been mitigated by carrying out a full readiness assessment? <span class="rating"><select
+                    <a class="list-group-item list-group-item-action list-group-item-light assessments">Were all risks
+                        been mitigated by carrying out a full readiness assessment? <span class="rating"><select
                                 class="form-control ratingSelect" id="c3s3">
                                 <option>0</option>
                                 <option>1</option>
@@ -364,13 +371,22 @@
             <!--------------------------------------End of Category G----------------------------------------------------->
         </div>
         <!--------------------------------------End of All Categories----------------------------------------------------->
+        <div id="evaluateScore">
+
+        </div>
         <div class="footers">
             <div class="toggleButtons">
-                <button type="button" class="btn btn-outline-dark prevButton">
-                    <h3 id="prev"><</h3>
+                <button type="button" class="btn btn-outline-dark prevButton" id="prev">
+                    <h3><</h3>
                 </button>
-                <button type="button" class="btn btn-outline-dark nextButton">
-                    <h3 id="next">></h3>
+                <button type="button" class="btn btn-outline-dark nextButton" id="next">
+                    <h3>></h3>
+                </button>
+                <button type="button" class="btn btn-outline-dark evaluate" id="evaluate">
+                    <h3>Evaluate</h3>
+                </button>
+                <button type="button" class="btn btn-outline-dark reEvaluate" id="reEvaluate">
+                    <h3>Re - Evaluate</h3>
                 </button>
             </div>
             <div class="totalScore">
