@@ -3,6 +3,16 @@ body{
 
 }
 
+.navbar{
+    z-index: 1;
+    position: static;
+}
+
+.image1{
+    z-index: 2;
+    position:relative;
+}
+
 .mainContainer{
 width: 80%;
 margin-left: auto;
