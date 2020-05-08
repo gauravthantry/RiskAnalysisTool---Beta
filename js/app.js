@@ -157,13 +157,13 @@ $(document).ready(function () {
          $("#prev").hide();
       });
 
-      if (scorePercentage < 90 && scorePercentage > 80) {
+      if (scorePercentage < 90 && scorePercentage >= 80) {
          risk = 1;
       }
-      else if (scorePercentage < 80 && scorePercentage > 70) {
+      else if (scorePercentage < 80 && scorePercentage >= 70) {
          risk = 2;
       }
-      else if (scorePercentage < 70 && scorePercentage > 60) {
+      else if (scorePercentage < 70 && scorePercentage >= 60) {
          risk = 3;
       }
       else if (scorePercentage < 60) {
@@ -230,12 +230,15 @@ $(document).ready(function () {
 
 
 function lowRiskIssues(){
-   console.log("lowrisk"); 
+   $("<div class=\"alert alert-secondary\" role=\"alert\"></div>").insertAfter(".sectionDiv")
    $(".criteria").each((i, obj)=>{
-      console.log("span");
-      if($(obj).children("span").children("select").val()<5)
+      if($(obj).children("select").val()<5)
       {
-      console.log($($(obj).contents()[1]).text());
+         if(i>0){
+            $(".alert-secondary").append("<hr class=\"my-4 sectionDiv\">");
+         }
+         $(".alert-secondary").append($($(obj).parent().contents()[0]).text());
+         console.log($($(obj).parent().contents()[0]).text());
       }
    })
    
