@@ -231,29 +231,87 @@ $(document).ready(function () {
 });
 
 
-function lowRiskIssues(){
-   $("<div class=\"alert alert-secondary\" role=\"alert\"></div>").insertAfter(".sectionDiv")
-   $(".criteria").each((i, obj)=>{
-      if($(obj).children("select").val()<5)
-      {
+function lowRiskIssues() {
+   $("<div class=\"alert alert-secondary\" id=\"normalCriteria\" role=\"alert\"></div>").insertAfter(".sectionDiv")
+   var issueEntered = false;
+   $(".criteria").each((i, obj) => {
+      if ($(obj).children("select").val() < 5) {
          var criteriaScore = parseInt($(obj).children("select").val());
-         if(i>0){
-            $(".alert-secondary").append("<hr class=\"my-4 sectionDiv\">");
+         if (issueEntered) {
+            $("#normalCriteria").append("<hr class=\"my-4\">");
          }
-         if(criteriaScore === 4){
-            $(".alert-secondary").append($($(obj).parent().contents()[0]).text());
+         if (criteriaScore === 4) {
+            $("#normalCriteria").append($($(obj).parent().contents()[0]).text());
+            issueEntered = true;
          }
-         else if(criteriaScore === 3){
-            $(".alert-secondary").append("<i class=\"fa fa-exclamation-triangle yellow\"></i>"+"  "+$($(obj).parent().contents()[0]).text());
+         else if (criteriaScore === 3) {
+            $("#normalCriteria").append("<i class=\"fa fa-exclamation-triangle yellow\"></i>" + "  " + $($(obj).parent().contents()[0]).text());
+            issueEntered = true;
          }
-         else if(criteriaScore < 3){
-            $(".alert-secondary").append("<i class=\"fa fa-exclamation-triangle red\"></i> <i class=\"fa fa-exclamation-triangle red\"></i>"+"  "+$($(obj).parent().contents()[0]).text());
+         else if (criteriaScore < 3) {
+            $("#normalCriteria").append("<i class=\"fa fa-exclamation-triangle red\"></i> <i class=\"fa fa-exclamation-triangle red\"></i>" + "  " + $($(obj).parent().contents()[0]).text());
+            issueEntered = true;
          }
       }
    })
 }
 
 
-function mediumRisk(){
+function mediumRisk() {
+   var normalIssueEntered = false;
+   var importantIssueEnetered = false;
+   var normalCriteriaRisk = false;
+   var importantCriteriaRisk = false;
 
+   $(".criteria").each((i, obj) => {
+      if (($(obj).children("select").val() < 5) && ($(obj).hasClass("important"))) {
+         importantCriteriaRisk = true;
+      }
+      else if (($(obj).children("select").val() < 5)) {
+         normalCriteriaRisk = true;
+      }
+   });
+
+
+
+   if (importantCriteriaRisk) {
+      $(".jumbotron").append("<div class=\"alert alert-danger\" id=\"importantCriteria\" role=\"alert\"></div>");
+   }
+   if (normalCriteriaRisk) {
+      $(".jumbotron").append("<div class=\"alert alert-secondary\" id=\"normalCriteria\" role=\"alert\"></div>")
+   }
+
+   $(".criteria").each((i, obj) => {
+      if (($(obj).children("select").val() < 5) && ($(obj).hasClass("important"))) {
+         var criteriaScore = parseInt($(obj).children("select").val());
+         if (importantIssueEnetered) {
+            $("#importantCriteria").append("<hr class=\"my-4\">");
+         }
+         if (criteriaScore === 4) {
+            $("#importantCriteria").append("<i class=\"fa fa-exclamation-triangle yellow\"></i>" + "  " + $($(obj).parent().contents()[2]).text());
+            importantIssueEnetered = true;
+         }
+         else if (criteriaScore < 3) {
+            $("#importantCriteria").append("<i class=\"fa fa-exclamation-triangle red\"></i> <i class=\"fa fa-exclamation-triangle red\"></i>" + "  " + $($(obj).parent().contents()[2]).text());
+            importantIssueEnetered = true;
+         }
+      } else if ($(obj).children("select").val() < 5) {
+         var criteriaScore = parseInt($(obj).children("select").val());
+         if (normalIssueEntered) {
+            $("#normalCriteria").append("<hr class=\"my-4\">");
+         }
+         if (criteriaScore === 4) {
+            $("#normalCriteria").append($($(obj).parent().contents()[0]).text());
+            normalIssueEntered = true;
+         }
+         else if (criteriaScore === 3) {
+            $("#normalCriteria").append("<i class=\"fa fa-exclamation-triangle yellow\"></i>" + "  " + $($(obj).parent().contents()[0]).text());
+            normalIssueEntered = true;
+         }
+         else if (criteriaScore < 3) {
+            $("#normalCriteria").append("<i class=\"fa fa-exclamation-triangle red\"></i> <i class=\"fa fa-exclamation-triangle red\"></i>" + "  " + $($(obj).parent().contents()[0]).text());
+            normalIssueEntered = true;
+         }
+      }
+   })
 }
