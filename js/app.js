@@ -246,15 +246,15 @@ function lowRiskIssues() {
             $("#normalCriteria").append("<hr class=\"my-4\">");
          }
          if (criteriaScore === 4) {
-            $("#normalCriteria").append($($(obj).parent().contents()[0]).text());
+            $("#normalCriteria").append($($(obj).parent().contents()[0]).text()+"<span class=\"individualScore\">"+criteriaScore+" / 5");
             issueEntered = true;
          }
          else if (criteriaScore === 3) {
-            $("#normalCriteria").append("<i class=\"fa fa-exclamation-triangle yellow\"></i>" + "  " + $($(obj).parent().contents()[0]).text());
+            $("#normalCriteria").append("<i class=\"fa fa-exclamation-triangle yellow\"></i>" + "  " + $($(obj).parent().contents()[0]).text()+"<span class=\"individualScore\">"+criteriaScore+" / 5");
             issueEntered = true;
          }
          else if (criteriaScore < 3) {
-            $("#normalCriteria").append("<i class=\"fa fa-exclamation-triangle red\"></i> <i class=\"fa fa-exclamation-triangle red\"></i>" + "  " + $($(obj).parent().contents()[0]).text());
+            $("#normalCriteria").append("<i class=\"fa fa-exclamation-triangle red\"></i> <i class=\"fa fa-exclamation-triangle red\"></i>" + "  " + $($(obj).parent().contents()[0]).text()+"<span class=\"individualScore\">"+criteriaScore+" / 5");
             issueEntered = true;
          }
       }
@@ -290,11 +290,11 @@ function riskIssues() {
          }
          if (criteriaScore === 4) {
             console.log("entered final important condition 4");
-            $("#importantCriteria").append("<i class=\"fa fa-exclamation-triangle yellow\"></i>" + "  " + $($(obj).parent().contents()[2]).text());
+            $("#importantCriteria").append("<i class=\"fa fa-exclamation-triangle yellow\"></i>" + "  " + $($(obj).parent().contents()[2]).text()+"<span class=\"individualScore\">"+criteriaScore+" / 5");
             importantIssueEnetered = true;
          }
          else if (criteriaScore <= 3) {
-            $("#importantCriteria").append("<i class=\"fa fa-exclamation-triangle red\"></i> <i class=\"fa fa-exclamation-triangle red\"></i>" + "  " + $($(obj).parent().contents()[2]).text());
+            $("#importantCriteria").append("<i class=\"fa fa-exclamation-triangle red\"></i> <i class=\"fa fa-exclamation-triangle red\"></i>" + "  " + $($(obj).parent().contents()[2]).text()+"<span class=\"individualScore\">"+criteriaScore+" / 5");
             importantIssueEnetered = true;
          }
       } else if ($(obj).children("select").val() < 5) {
@@ -303,15 +303,15 @@ function riskIssues() {
             $("#normalCriteria").append("<hr class=\"my-4\">");
          }
          if (criteriaScore === 4) {
-            $("#normalCriteria").append($($(obj).parent().contents()[0]).text());
+            $("#normalCriteria").append($($(obj).parent().contents()[0]).text()+"<span class=\"individualScore\">"+criteriaScore+" / 5");
             normalIssueEntered = true;
          }
          else if (criteriaScore === 3) {
-            $("#normalCriteria").append("<i class=\"fa fa-exclamation-triangle yellow\"></i>" + "  " + $($(obj).parent().contents()[0]).text());
+            $("#normalCriteria").append("<i class=\"fa fa-exclamation-triangle yellow\"></i>" + "  " + $($(obj).parent().contents()[0]).text()+"<span class=\"individualScore\">"+criteriaScore+" / 5");
             normalIssueEntered = true;
          }
          else if (criteriaScore < 3) {
-            $("#normalCriteria").append("<i class=\"fa fa-exclamation-triangle red\"></i> <i class=\"fa fa-exclamation-triangle red\"></i>" + "  " + $($(obj).parent().contents()[0]).text());
+            $("#normalCriteria").append("<i class=\"fa fa-exclamation-triangle red\"></i> <i class=\"fa fa-exclamation-triangle red\"></i>" + "  " + $($(obj).parent().contents()[0]).text()+"<span class=\"individualScore\">"+criteriaScore+" / 5");
             normalIssueEntered = true;
          }
       }
