@@ -199,13 +199,17 @@ $(document).ready(function () {
       else if (risk === 2) {
          $("#successPercentage").css("color", "#ffa500");
          $("<div class=\"alert alert-warning\" role=\"alert\"><p class=\"lead\">This project has only passed some of the Risk assessment criterias or might have failed in some important assessment criterias. It is recommended to look into the below issues and not deploy the project until they are fixed</p></div>").insertAfter("#successPercentage");
-         mediumRisk();
+         riskIssues();
       }
       else if (risk === 3) {
          $("#successPercentage").css("color", "#ff0000");
+         $("<div class=\"alert alert-danger\" role=\"alert\"><p class=\"lead\">Deploying this project will be risky, as it does not meets many of the Risk Assessment criterias or it fails to meet some of the important assessment criterias </p></div>").insertAfter("#successPercentage");
+         riskIssues();
       }
       else if (risk === 4) {
          $("#successPercentage").css("color", "#991A00");
+         $("<div class=\"alert alert-danger\" role=\"alert\"><p class=\"lead\">This project does not meet most of the Assessment citerias or fails to meet the expectations of the important ones. It is strogly recommended that the project is not deployed</p></div>").insertAfter("#successPercentage");
+         riskIssues();
       }
 
       $(".display-4").html("Success rate : ");
@@ -226,7 +230,6 @@ $(document).ready(function () {
          $(".alert").hide();
       });
       currentCategoryIndex = 0;
-
    });
 });
 
@@ -257,7 +260,7 @@ function lowRiskIssues() {
 }
 
 
-function mediumRisk() {
+function riskIssues() {
    var normalIssueEntered = false;
    var importantIssueEnetered = false;
    var normalCriteriaRisk = false;
@@ -271,16 +274,12 @@ function mediumRisk() {
          normalCriteriaRisk = true;
       }
    });
-
-
-
    if (importantCriteriaRisk) {
       $(".jumbotron").append("<div class=\"alert alert-danger\" id=\"importantCriteria\" role=\"alert\"></div>");
    }
    if (normalCriteriaRisk) {
       $(".jumbotron").append("<div class=\"alert alert-secondary\" id=\"normalCriteria\" role=\"alert\"></div>")
    }
-
    $(".criteria").each((i, obj) => {
       if (($(obj).children("select").val() < 5) && ($(obj).hasClass("important"))) {
          var criteriaScore = parseInt($(obj).children("select").val());
