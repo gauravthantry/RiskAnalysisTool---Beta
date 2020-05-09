@@ -142,7 +142,6 @@ $(document).ready(function () {
 
    $("#evaluate").click(() => {
       $(".totalScore").hide();
-
       var totalScore = parseInt($("#score").text());
       var maxScore = parseInt($("#maxScore").text());
       var scorePercentage = ((totalScore / maxScore) * 100).toFixed(2);
@@ -190,16 +189,17 @@ $(document).ready(function () {
 
       if (risk === 0) {
          $("#successPercentage").css("color", "#008000");
-         $(".lead").html("This project has passed all the Risk assessment criterias and can be deployed in production");
+         $("<div class=\"alert alert-success\" role=\"alert\"><p class=\"lead\">This project has passed all the Risk assessment criterias and can be deployed in production</p></div>").insertAfter("#successPercentage");
       }
       else if (risk === 1) {
          $("#successPercentage").css("color", "#90EE90");
-
-         $(".lead").html("This project has passed most of the Risk assessment criterias and can be deployed in production if it is agreed that the below issues do not affect the application");
+         $("<div class=\"alert alert-success\" role=\"alert\"><p class=\"lead\">This project has passed most of the Risk assessment criterias and can be deployed in production if it is agreed that the below issues do not affect the application</p></div>").insertAfter("#successPercentage");
          lowRiskIssues();
       }
       else if (risk === 2) {
          $("#successPercentage").css("color", "#ffa500");
+         $("<div class=\"alert alert-warning\" role=\"alert\"><p class=\"lead\">This project has only passed some of the Risk assessment criterias or might have failed in some important assessment criterias. It is recommended to look into the below issues and not deploy the project until they are fixed</p></div>").insertAfter("#successPercentage");
+         mediumRisk();
       }
       else if (risk === 3) {
          $("#successPercentage").css("color", "#ff0000");
@@ -223,8 +223,10 @@ $(document).ready(function () {
          $("#evaluate").hide();
          $("#next").show();
          $("#prev").show();
+         $(".alert").hide();
       });
       currentCategoryIndex = 0;
+
    });
 });
 
@@ -234,12 +236,24 @@ function lowRiskIssues(){
    $(".criteria").each((i, obj)=>{
       if($(obj).children("select").val()<5)
       {
+         var criteriaScore = parseInt($(obj).children("select").val());
          if(i>0){
             $(".alert-secondary").append("<hr class=\"my-4 sectionDiv\">");
          }
-         $(".alert-secondary").append($($(obj).parent().contents()[0]).text());
-         console.log($($(obj).parent().contents()[0]).text());
+         if(criteriaScore === 4){
+            $(".alert-secondary").append($($(obj).parent().contents()[0]).text());
+         }
+         else if(criteriaScore === 3){
+            $(".alert-secondary").append("<i class=\"fa fa-exclamation-triangle yellow\"></i>"+"  "+$($(obj).parent().contents()[0]).text());
+         }
+         else if(criteriaScore < 3){
+            $(".alert-secondary").append("<i class=\"fa fa-exclamation-triangle red\"></i> <i class=\"fa fa-exclamation-triangle red\"></i>"+"  "+$($(obj).parent().contents()[0]).text());
+         }
       }
    })
-   
+}
+
+
+function mediumRisk(){
+
 }
